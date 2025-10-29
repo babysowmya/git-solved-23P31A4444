@@ -1,10 +1,21 @@
-"## Phase 4 - Git Fetch & Pull" 
-## Phase 4 – Git Fetch & Pull
-- Used `git fetch` 1 time
-- Used `git pull` 1 time
-
-## Phase 4 – Git Cherry-Pick
-- Used `git cherry-pick` 1 time
-## Phase 4 – Git Tag
-- Created 2 tags: `v1.0.0`, `v1.1.0`
-- Both pushed to remote
+- 6ec4744: docs: Update changelog for tagging phase (babysowmya, 16 minutes ago)
+- 81490a2: docs: Update README (babysowmya, 33 minutes ago)
+- 1b409ec: docs: Update changelog for cherry-pick usage (babysowmya, 34 minutes ago)
+- fc7bd8e: feat: Add new feature (babysowmya, 39 minutes ago)
+- 0e73243: docs: Add FAQ section (babysowmya, 40 minutes ago)
+- 8c87184: docs: Update CHANGELOG with fetch and pull usage (babysowmya, 43 minutes ago)
+- 4127d39: resolve: merge conflicts resolved and experimental features placed behind feature flags (babysowmya, 53 minutes ago)
+- 78cbfd3: merge: resolved conflicts between main and dev (babysowmya, 89 minutes ago)
+- 1383726: Development version updates (babysowmya, 3 hours ago)
+- 361c27e: i (babysowmya, 5 hours ago)
+- d9ee4cc: Updated system architecture for dev environment (babysowmya, 5 hours ago)
+- c8a8c15: Updated monitor.js for staging with latency checks (dev branch) (babysowmya, 5 hours ago)
+- f66938c: Updated deploy.sh for staging environment (dev branch) (babysowmya, 5 hours ago)
+- a09fce8: Updated database-config.json for dev environment (babysowmya, 5 hours ago)
+- a066720: Updated app-config.yaml for dev environment (babysowmya, 5 hours ago)
+- 22422c5: Added change from dev branch (babysowmya, 5 hours ago)
+- 2cec1e1: Added checkpoint1 screenshot (babysowmya, 6 hours ago)
+- d3dd9b2: updating conflict-simulator (Hanu Gupta, 6 days ago)
+- 0312c6f: updating main (Hanu Gupta, 6 days ago)
+- fadfd24: Revise README for DevOps Simulator project (Hanu Gupta, 6 days ago)
+- ae630eb: Initial commit (Hanu Gupta, 6 days ago)
