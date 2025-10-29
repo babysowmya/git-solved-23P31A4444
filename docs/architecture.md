@@ -1,31 +1,31 @@
-# System Architecture
+# System Architecture (Development)
 
 ## Overview
-DevOps Simulator follows a microservices architecture designed for high availability and scalability.
+DevOps Simulator uses a **containerized microservices** architecture optimized for flexibility and CI/CD integration.
 
 ## Components
 
 ### 1. Application Server
-- **Technology**: Node.js + Express
-- **Port**: 8080
-- **Scaling**: Horizontal auto-scaling enabled
+- **Technology**: Node.js + Express + TypeScript
+- **Port**: 5000
+- **Scaling**: Dynamic scaling via Kubernetes
 
 ### 2. Database Layer
-- **Database**: PostgreSQL 14
-- **Configuration**: Master-slave replication
-- **Backup**: Daily automated backups
+- **Database**: PostgreSQL 15
+- **Configuration**: Multi-region read replicas
+- **Backup**: Hourly incremental backups
 
 ### 3. Monitoring System
-- **Tool**: Prometheus + Grafana
-- **Metrics**: CPU, Memory, Disk, Network
-- **Alerts**: Email notifications for critical issues
+- **Tool**: Prometheus + Grafana + Loki
+- **Metrics**: CPU, Memory, Disk, API Latency
+- **Alerts**: Slack + Email notifications
 
 ## Deployment Strategy
-- **Method**: Rolling updates
-- **Zero-downtime**: Yes
-- **Rollback**: Automated on failure
+- **Method**: Blue-Green Deployment
+- **Zero-downtime**: Achieved via Kubernetes rollout
+- **Rollback**: Manual approval in CI/CD pipeline
 
 ## Security
-- SSL/TLS encryption
-- Database connection encryption
-- Regular security audits
+- End-to-end encryption (TLS 1.3)
+- Role-based access control (RBAC)
+- Container vulnerability scanning
