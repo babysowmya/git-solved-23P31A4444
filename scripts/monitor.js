@@ -1,31 +1,34 @@
 /**
- * System Monitoring Script - Production
- * Monitors application health and performance
+ * System Monitoring Script - Staging
+ * Extended version with latency tracking and detailed logs
  */
 
 const monitorConfig = {
-  interval: 60000, // 1 minute
-  alertThreshold: 80,
-  metricsEndpoint: 'http://localhost:8080/metrics'
+  interval: 30000, // 30 seconds
+  alertThreshold: 70,
+  metricsEndpoint: 'http://localhost:5000/metrics',
+  enableLatencyCheck: true
 };
 
 console.log('=================================');
-console.log('DevOps Simulator - Monitor v1.0');
+console.log('DevOps Simulator - Monitor v2.0 (Staging)');
 console.log('=================================');
 
 function checkSystemHealth() {
-  console.log(`[${new Date().toISOString()}] Checking system health...`);
+  console.log(`[${new Date().toISOString()}] Performing system diagnostics...`);
   
   // Check CPU usage
-  console.log('✓ CPU usage: Normal');
+  console.log('✓ CPU usage: Stable');
   
   // Check Memory
-  console.log('✓ Memory usage: Normal');
+  console.log('✓ Memory usage: Within limits');
   
-  // Check Disk
-  console.log('✓ Disk space: Adequate');
+  // Check API Latency
+  if (monitorConfig.enableLatencyCheck) {
+    console.log('✓ API Latency: 120ms');
+  }
   
-  console.log('System Status: HEALTHY');
+  console.log('System Status: OPTIMAL');
 }
 
 // Start monitoring
