@@ -23,3 +23,4 @@ features:
   auto_scaling: false
   load_balancer: disabled
   backup_enabled: false
+# Development configuration changes
