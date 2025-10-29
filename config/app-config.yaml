@@ -1,25 +1,26 @@
-# Development Application Configuration
+# Production Application Configuration
 application:
   name: DevOpsSimulator
   version: 1.0.0
-  environment: development
+  environment: production
   
 server:
-  host: localhost
-  port: 3000
-  ssl_enabled: false
+  host: 0.0.0.0
+  port: 8080
+  ssl_enabled: true
   
 logging:
-  level: DEBUG
-  format: text
-  output: ./logs/dev.log
+  level: INFO
+  format: json
+  output: /var/log/app.log
   
 database:
-  host: dev-db.local
+  host: prod-db.example.com
   port: 5432
-  name: devops_dev
+  name: devops_prod
   
 features:
-  auto_scaling: false
-  load_balancer: disabled
-  backup_enabled: false
+  auto_scaling: true
+  load_balancer: enabled
+  backup_enabled: true
+  # Production configuration changes

@@ -37,3 +37,5 @@ setInterval(checkSystemHealth, monitorConfig.interval);
 
 // Run first check immediately
 checkSystemHealth();
+console.log("Monitoring Production Mode");
+

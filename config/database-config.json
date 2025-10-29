@@ -1,5 +1,6 @@
 {
   "connection": {
+    "environment": "production",
     "host": "dev-db.local",
     "port": 5432,
     "database": "devops_dev",

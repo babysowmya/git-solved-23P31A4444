@@ -29,3 +29,4 @@ DevOps Simulator uses a **containerized microservices** architecture optimized f
 - End-to-end encryption (TLS 1.3)
 - Role-based access control (RBAC)
 - Container vulnerability scanning
+### Production deployment diagram will be added here.

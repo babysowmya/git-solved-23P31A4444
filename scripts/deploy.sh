@@ -33,3 +33,4 @@ echo "Deploying application to staging environment..."
 
 echo "Deployment completed for staging!"
 echo "Application running at: http://staging.local:$APP_PORT"
+echo "Production deployment executed"
