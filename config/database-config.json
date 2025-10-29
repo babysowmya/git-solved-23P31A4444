@@ -1,22 +1,22 @@
 {
   "connection": {
-    "host": "prod-db.example.com",
+    "host": "dev-db.local",
     "port": 5432,
-    "database": "devops_production",
-    "username": "prod_admin",
-    "ssl_mode": "require",
-    "pool_size": 20,
-    "timeout": 30
+    "database": "devops_dev",
+    "username": "dev_user",
+    "ssl_mode": "disable",
+    "pool_size": 10,
+    "timeout": 60
   },
   "backup": {
-    "enabled": true,
-    "schedule": "0 2 * * *",
-    "retention_days": 30,
-    "location": "/backups/database"
+    "enabled": false,
+    "schedule": "0 4 * * *",
+    "retention_days": 7,
+    "location": "./backups/dev"
   },
   "replication": {
-    "enabled": true,
-    "replicas": 2,
-    "sync_mode": "synchronous"
+    "enabled": false,
+    "replicas": 0,
+    "sync_mode": "asynchronous"
   }
 }
