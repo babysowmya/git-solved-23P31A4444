@@ -1,36 +1,36 @@
 #!/bin/bash
-# Staging Deployment Script
-# Version: 2.0.0-dev
-
 set -e
 
+# Multi-Environment Deploy Script
+# Default to production if not specified
+DEPLOY_ENV=${DEPLOY_ENV:-production}
+
 echo "====================================="
-echo "DevOps Simulator - Staging Deploy"
+echo "DevOps Simulator - Deployment"
 echo "====================================="
 
-# Configuration
-DEPLOY_ENV="staging"
-DEPLOY_REGION="us-west-2"
-APP_PORT=5000
-DEBUG_MODE=true
-
-echo "Environment: $DEPLOY_ENV"
-echo "Region: $DEPLOY_REGION"
-echo "Port: $APP_PORT"
-echo "Debug Mode: $DEBUG_MODE"
-
-# Pre-deployment checks
-echo "Performing dependency validation..."
-if [ ! -f "config/app-config.yaml" ]; then
-    echo "Error: Missing app configuration file!"
+if [ "$DEPLOY_ENV" = "production" ]; then
+    echo "Mode: Production"
+    DEPLOY_REGION="us-east-1"
+    APP_PORT=8080
+    echo "Environment: $DEPLOY_ENV"
+    echo "Region: $DEPLOY_REGION"
+    echo "Port: $APP_PORT"
+    echo "Starting production deployment..."
+    
+elif [ "$DEPLOY_ENV" = "development" ]; then
+    echo "Mode: Development"
+    DEPLOY_MODE="docker-compose"
+    APP_PORT=3000
+    echo "Environment: $DEPLOY_ENV"
+    echo "Mode: $DEPLOY_MODE"
+    echo "Installing dependencies..."
+    npm install
+    echo "Starting development server..."
+    
+else
+    echo "Error: Unknown environment $DEPLOY_ENV"
     exit 1
 fi
 
-# Deploy application
-echo "Deploying application to staging environment..."
-# docker build -t devops-simulator:staging .
-# docker run -d -p $APP_PORT:5000 devops-simulator:staging
-
-echo "Deployment completed for staging!"
-echo "Application running at: http://staging.local:$APP_PORT"
-echo "Production deployment executed"
+echo "Deployment completed successfully!"

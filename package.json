@@ -1,0 +1,25 @@
+{
+  "name": "git-mastery-challenge-template",
+  "version": "1.0.0",
+  "description": "A comprehensive CI/CD configuration management tool for enterprise deployments.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+  "dev": "echo \"Development mode running...\"",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babysowmya/git-solved-23P31A4444.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/babysowmya/git-solved-23P31A4444/issues"
+  },
+  "homepage": "https://github.com/babysowmya/git-solved-23P31A4444#readme"
+}

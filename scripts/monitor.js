@@ -1,41 +1,53 @@
 /**
- * System Monitoring Script - Staging
- * Extended version with latency tracking and detailed logs
+ * System Monitoring Script
+ * Supports both production and development modes
  */
 
+const ENV = process.env.NODE_ENV || 'production';
+
 const monitorConfig = {
-  interval: 30000, // 30 seconds
-  alertThreshold: 70,
-  metricsEndpoint: 'http://localhost:5000/metrics',
-  enableLatencyCheck: true
+  production: {
+    interval: 60000,
+    alertThreshold: 80,
+    debugMode: false
+  },
+  development: {
+    interval: 5000,
+    alertThreshold: 90,
+    debugMode: true,
+    verboseLogging: true
+  }
 };
 
+const config = monitorConfig[ENV];
+
 console.log('=================================');
-console.log('DevOps Simulator - Monitor v2.0 (Staging)');
+console.log(`DevOps Simulator - Monitor`);
+console.log(`Environment: ${ENV}`);
+console.log(`Debug: ${config.debugMode ? 'ENABLED' : 'DISABLED'}`);
 console.log('=================================');
 
 function checkSystemHealth() {
-  console.log(`[${new Date().toISOString()}] Performing system diagnostics...`);
+  const timestamp = new Date().toISOString();
   
-  // Check CPU usage
-  console.log('✓ CPU usage: Stable');
-  
-  // Check Memory
-  console.log('✓ Memory usage: Within limits');
-  
-  // Check API Latency
-  if (monitorConfig.enableLatencyCheck) {
-    console.log('✓ API Latency: 120ms');
+  if (config.debugMode) {
+    console.log(`\n[${timestamp}] === DETAILED HEALTH CHECK ===`);
+  } else {
+    console.log(`[${timestamp}] Checking system health...`);
   }
   
-  console.log('System Status: OPTIMAL');
+  console.log('✓ CPU usage: Normal');
+  console.log('✓ Memory usage: Normal');
+  console.log('✓ Disk space: Adequate');
+  
+  if (config.debugMode) {
+    console.log('✓ Hot reload: Active');
+    console.log('✓ Debug port: 9229');
+  }
+  
+  console.log('System Status: HEALTHY');
 }
 
-// Start monitoring
-console.log(`Monitoring every ${monitorConfig.interval}ms`);
-setInterval(checkSystemHealth, monitorConfig.interval);
-
-// Run first check immediately
+console.log(`Monitoring every ${config.interval}ms`);
+setInterval(checkSystemHealth, config.interval);
 checkSystemHealth();
-console.log("Monitoring Production Mode");
-
